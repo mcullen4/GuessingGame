@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Guessing Game Title</title>
+    </h:head>
+    <h:body>
+        <h:outputText style="font-size: large;font-weight: bold;" value="Guess a number between 1 and 10"></h:outputText>
+        <h:form id="guessFormForm">
+            <h:messages style="color:red;"/>
+            <h:panelGrid columns="2">
+                <h:outputText rendered="#{guessBean.guessText}"  value="Enter your guess"></h:outputText>
+                <h:inputText rendered="#{guessBean.guessField}"  required="true" requiredMessage="Number is required" value="#{guessBean.guess}"/>
+                <h:commandButton rendered="#{guessBean.submitGuessButton}" value="Submit Guess" action="#{guessBean.checkGuess}"></h:commandButton>
+                <h:outputText value="#{guessBean.message}"></h:outputText>
+                
+            </h:panelGrid>
+            <h:commandButton rendered="#{guessBean.startGameButton}" value="Start Game" action="#{guessBean.startGame()}"></h:commandButton>
+            <h:panelGrid columns="2">
+            <h:outputText value="Low Number of Guesses"></h:outputText>
+            <h:outputText value="#{guessBean.lowNoGuesses}"></h:outputText>
+            <h:outputText value="High Number of Guesses"></h:outputText>
+            <h:outputText value="#{guessBean.highNoGuesses}"></h:outputText>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
