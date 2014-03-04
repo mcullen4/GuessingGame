@@ -18,7 +18,7 @@ import model.NumberService;
 @Named
 @SessionScoped
 public class GuessBean implements Serializable {
-
+    private static final long serialVersionID = 1L;
     private int guess;
     private int randomNumber;
     private int noGuesses;

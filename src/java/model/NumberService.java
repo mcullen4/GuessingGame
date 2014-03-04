@@ -13,6 +13,8 @@ import java.util.Random;
  * @author Michele
  */
 public class NumberService implements Serializable {
+    
+    private static final long serialVersionID = 1L;
 
     public String checkGuessAndReturnMessage(int guess, int randomNumber) {
         String returnMessage = null;
